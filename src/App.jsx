@@ -12,32 +12,53 @@ function App() {
 
   const formatUserName = (userName) => `@${userName}`
   // no buena práctica
-  const daniel = {
-    
-    formatUserName,
-    userName  : 'danielmateu',
-    name      : 'Daniel Mateu',
-    img : dani
-  }
+  // const daniel = {
+  //   formatUserName,
+  //   userName  : 'danielmateu',
+  //   name      : 'Daniel Mateu',
+  //   img : dani
+  // }
+
+  const users = [
+    {
+      formatUserName,
+      userName  : 'danielmateu',
+      name      : 'Daniel Mateu',
+      img : dani
+    },
+    {
+      formatUserName,
+      userName  : 'silviacazorla',
+      name      : 'Silvia Cazorla',
+      img : silvia
+    },
+    {
+      formatUserName,
+      userName  : 'nukpmateucazorla',
+      name      : 'Nuk Mateu Cazorla',
+      img : nuk
+    }
+  ]
 
   return (
     <section className='App'>
-      <TwitterFollwCard {...daniel}/>
+      {/* <TwitterFollwCard {...daniel}/> */}
       {/* // mejor practica, más declarativo */}
-      <TwitterFollwCard
-        
+      {/* <TwitterFollwCard
         formatUserName={formatUserName}
         userName={'silviacazorla'}
         name={'Silvia Cazorla'}
         img={silvia}
-      />
-      <TwitterFollwCard
-        
+      /> */}
+      {/* <TwitterFollwCard
         formatUserName={formatUserName}
         userName={'nukpmateucazorla'}
         name={'Nuk Mateu Cazorla'}
         img={nuk}
-      />
+      /> */}
+      {users.map((user, index) => (
+        <TwitterFollwCard key={index} {...user} />
+      ))}
     </section>
   )
 }

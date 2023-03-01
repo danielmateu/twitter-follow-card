@@ -68,7 +68,22 @@ article header span {
   opacity: 1;
 }
 
+.tw-followCard-button.is-following:hover .tw-followCard-stopFollow{
+  display: block;
+}
 
+.tw-followCard-stopFollow{
+  display: none;
+}
+
+.tw-followCard-text {
+  display: block;
+}
+
+
+.tw-followCard-button.is-following:hover .tw-followCard-text {
+  display: none;
+}
 /* .tw-followCard {
   display: flex;
   align-items: center;
