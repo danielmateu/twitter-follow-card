@@ -11,29 +11,32 @@ import nuk from './assets/nuk.jpg'
 function App() {
 
   const formatUserName = (userName) => `@${userName}`
+  // no buena práctica
+  const daniel = {
+    
+    formatUserName,
+    userName  : 'danielmateu',
+    name      : 'Daniel Mateu',
+    img : dani
+  }
 
   return (
     <section className='App'>
+      <TwitterFollwCard {...daniel}/>
+      {/* // mejor practica, más declarativo */}
       <TwitterFollwCard
-        isFollowing
-        formatUserName = {formatUserName}
-        userName={'danielmateu'}
-        name = {'Daniel Mateu'}
-        img = {dani}
-      />
-      <TwitterFollwCard
-        isFollowing
-        formatUserName = {formatUserName}
+        
+        formatUserName={formatUserName}
         userName={'silviacazorla'}
-        name = {'Silvia Cazorla'}
-        img = {silvia}
+        name={'Silvia Cazorla'}
+        img={silvia}
       />
       <TwitterFollwCard
-        isFollowing={false}
-        formatUserName = {formatUserName}
+        
+        formatUserName={formatUserName}
         userName={'nukpmateucazorla'}
-        name = {'Nuk Mateu Cazorla'}
-        img = {nuk}
+        name={'Nuk Mateu Cazorla'}
+        img={nuk}
       />
     </section>
   )
